@@ -1,0 +1,8 @@
+# Green Software Meter - dependencies
+# Core: no extra deps (stdlib ast only)
+
+# Optional: cyclomatic complexity
+radon>=6.0.0
+
+# Optional: structural warnings
+pylint>=3.0.0

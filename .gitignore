@@ -1,0 +1,23 @@
+﻿# VS Code extension - ignore node_modules
+vscode-extension/node_modules/
+vscode-extension/out/
+vscode-extension/dist/
+vscode-extension/.vscode-test/
+
+# Python - ignore cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

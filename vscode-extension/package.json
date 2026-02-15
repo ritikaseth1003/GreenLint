@@ -1,0 +1,96 @@
+{
+  "name": "green-software-meter",
+  "displayName": "Green Software Meter",
+  "description": "Energy efficiency analysis for Python code using static analysis",
+  "version": "0.1.0",
+  "publisher": "green-software-meter",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "greenSoftwareMeter.analyzeFile",
+        "title": "Green Software Meter: Analyze current file"
+      },
+      {
+        "command": "greenSoftwareMeter.analyzeWorkspace",
+        "title": "Green Software Meter: Analyze workspace Python files"
+      },
+      {
+        "command": "greenSoftwareMeter.refactorWithAI",
+        "title": "Green Software Meter: Refactor with AI (energy efficiency)"
+      }
+    ],
+    "configuration": {
+      "title": "Green Software Meter",
+      "properties": {
+        "greenSoftwareMeter.pythonPath": {
+          "type": "string",
+          "default": "python",
+          "description": "Path to the Python interpreter used to run the analyzer."
+        },
+        "greenSoftwareMeter.analyzerPath": {
+          "type": "string",
+          "default": "",
+          "description": "Full path to main.py (Green Software Meter). Leave empty to use main.py in workspace root."
+        },
+        "greenSoftwareMeter.runOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run analysis when a Python file is saved."
+        },
+        "greenSoftwareMeter.useRadon": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include cyclomatic complexity (requires radon)."
+        },
+        "greenSoftwareMeter.usePylint": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include Pylint structural warnings count."
+        },
+        "greenSoftwareMeter.realtimeAnalysis": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run energy analysis as you type (Grammarly-style)."
+        },
+        "greenSoftwareMeter.llmApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for AI refactor (Groq or OpenAI compatible). Leave empty to disable."
+        },
+        "greenSoftwareMeter.llmEndpoint": {
+          "type": "string",
+          "default": "https://api.groq.com/openai/v1/chat/completions",
+          "description": "LLM API endpoint (OpenAI-compatible)."
+        },
+        "greenSoftwareMeter.llmModel": {
+          "type": "string",
+          "default": "mixtral-8x7b-32768",
+          "description": "Model for AI refactor (e.g. mixtral-8x7b-32768, llama-3.1-8b-instant)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "dotenv": "^17.3.1",
+    "typescript": "^5.3.0"
+  }
+}
