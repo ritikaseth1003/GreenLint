@@ -261,7 +261,7 @@ Do not include the original function name if it's already in the code - just the
     
     return prompt
 
-
+# Report generation
 class ReportGenerator:
     """
     Generates reports in text or JSON format with hotspot detection.
