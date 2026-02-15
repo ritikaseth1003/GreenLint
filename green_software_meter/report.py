@@ -199,6 +199,7 @@ def format_json(report: EnergyReport, indent: int = 2) -> str:
     """Produce JSON string for IDE/CI integration."""
     return json.dumps(to_dict(report), indent=indent)
 
+# get the refactor prompt
 
 def get_refactor_prompt(report: EnergyReport, original_code: str = "") -> str:
     """Generate a targeted LLM refactoring prompt that REPLACES the code."""
