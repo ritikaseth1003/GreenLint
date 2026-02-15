@@ -606,3 +606,5 @@ export function deactivate(): void {
   statusBarItem?.dispose();
   refactorTargets.clear();
 }
+
+// extension file
